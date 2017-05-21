@@ -5,6 +5,7 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class DAOFactory {
+	//DAO工厂，用于创建各种各样的DAO实例
 	private static String classname = null;
 	private static Properties prop = null; 
 	private DAOFactory(){

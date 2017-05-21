@@ -52,10 +52,10 @@ public class JDBCUtils {
 	 * 
 	 * @return
 	 */
-	public static void main(String[] args) {
-		Connection connection = getConnection();
-		System.out.println(connection.toString());
-	}
+//	public static void main(String[] args) {
+//		Connection connection = getConnection();
+//		System.out.println(connection.toString());
+//	}
 	public static Connection getConnection() {
 		Connection conn = null;
 		try {
@@ -78,7 +78,15 @@ public class JDBCUtils {
 //		}
 //		return conn;
 	}
+	public static void main(String[] args) {
+		int i = 10;
+		while (i > 0) {
+			Connection connection = getConnection();
+			System.out.println(connection.hashCode());
+			i--;
 
+		}
+	}
 	/**
 	 * 释放资源
 	 * 
@@ -86,6 +94,7 @@ public class JDBCUtils {
 	 * @param ps
 	 * @param conn
 	 */
+
 	public static void free(ResultSet rs, PreparedStatement ps, Connection conn) {
 		try {
 			if (rs != null) {
