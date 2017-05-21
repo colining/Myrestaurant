@@ -11,18 +11,26 @@
     <schema id="5" parent="1" name="performance_schema"/>
     <schema id="6" parent="1" name="test"/>
     <table id="7" parent="2" name="user"/>
-    <column id="8" parent="7" name="userId">
+    <column id="8" parent="7" name="password">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="9" parent="7" name="username">
       <Position>1</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="9" parent="7" name="password">
-      <Position>2</Position>
-      <DataType>varchar(255)|0</DataType>
+    <column id="10" parent="7" name="userid">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
     </column>
-    <key id="10" parent="7" name="PRIMARY">
-      <ColNames>userId</ColNames>
+    <column id="11" parent="7" name="createdate">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="12" parent="7" name="PRIMARY">
+      <ColNames>username</ColNames>
       <Primary>1</Primary>
     </key>
   </database-model>

@@ -10,6 +10,7 @@ public class User {
 		this.username = user;
 		this.password = pass;
 	}
+
 	private Integer userid;
 	private String username;
 	private String password;

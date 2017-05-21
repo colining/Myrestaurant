@@ -16,9 +16,11 @@ public class UserDAOImpl extends baseDAO implements UserDAO {
 
 	@Override
 	public boolean findUser(User user) {
-		String sql = "SELECT * from user WHERE userId = "+user.getUserid()+" AND password = "+user.getPassword();
-		System.out.println(sql);
-		return findObj(sql);
+		String sql = "SELECT * from user WHERE username = "+'"'+user.getUsername()+'"'+" AND password = "+'"'+user.getPassword()+'"';
+		if (findObj(sql, User.class)==null){
+			return false;
+		}
+		return true;
 	}
 
 	@Override
