@@ -1,29 +1,41 @@
 package restaurant.action;
 
 
+import log4j2.Log4j2test;
 import org.apache.logging.log4j.LogManager;
 import restaurant.bean.User;
 import restaurant.biz.UserService;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.logging.Logger;
 
 /**
  * Created by asus on 2017/5/20.
  */
-@WebServlet(name = "LoginControl",urlPatterns = "/LoginControl")
-public class LoginControl extends HttpServlet {
+@WebServlet(name = "LoginControl",urlPatterns = "/LoginControl",initParams = {
+        @WebInitParam(name = "test",value = "this is initParam")
+})
+
+public class LoginControl extends HttpServlet implements Log4j2test{
+    public static void main(String[] args) {
+
+    }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String a=this.getInitParameter("test");
+        logger.debug(a);
         //step1: 获取用户提交的用户名和口令
         String username = request.getParameter("loginName");
         String password = request.getParameter("loginPassWord");
