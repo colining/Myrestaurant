@@ -1,5 +1,7 @@
 package restaurant.bean;
 
+import com.sun.deploy.uitoolkit.ui.DialogHook;
+
 public class Dish {
 	private int dishid;
 	private String dishname;
@@ -37,7 +39,11 @@ public class Dish {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	
-	
 
+
+	@Override
+	public boolean equals(Object obj) {
+			Dish dish = (Dish)obj;
+			return this.getDishid() == dish.getDishid();
+	}
 }

@@ -3,12 +3,16 @@
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/src/main/cn.colining/daoconfig.properties" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/cn.colining/dbcpconfig.properties" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/cn.colining/restaurant/action/LoginControl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/cn.colining/restaurant/action/LoginControlBack.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/cn.colining/restaurant/biz/DishService.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/cn.colining/restaurant/biz/UserService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/cn.colining/restaurant/dao/DishDAOImpl.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/cn.colining/restaurant/dao/baseDAO.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/cn.colining/restaurant/utils/DAOFactory.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/cn.colining/restaurant/utils/JDBCUtils.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/lib/mysql-connector-java-5.1.5-bin.jar" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/cn.colining/restaurant/utils/PageModel.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/show.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/show2.jsp" charset="GBK" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

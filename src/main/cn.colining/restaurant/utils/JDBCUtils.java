@@ -15,7 +15,6 @@ public class JDBCUtils {
 	private static String url;
 	private static String username;
 	private static String password;
-//	private static DataSource myds = new MyDataSource();
 	private static DataSource myds = null;
 	private JDBCUtils(){
 		

@@ -2,7 +2,7 @@
   <configuration default="false" name="colinis_a_cat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.11" ALTERNATIVE_JRE_ENABLED="false">
     <option name="UPDATING_POLICY" value="restart-server" />
     <deployment>
-      <artifact name="unnamed2">
+      <artifact name="Myrestaurant:war exploded">
         <settings>
           <option name="CONTEXT_PATH" value="/" />
         </settings>
@@ -67,7 +67,7 @@
     </ConfigurationWrapper>
     <method>
       <option name="BuildArtifacts" enabled="true">
-        <artifact name="unnamed2" />
+        <artifact name="Myrestaurant:war exploded" />
       </option>
     </method>
   </configuration>

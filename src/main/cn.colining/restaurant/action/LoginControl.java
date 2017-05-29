@@ -2,7 +2,6 @@ package restaurant.action;
 
 
 import log4j2.Log4j2test;
-import org.apache.logging.log4j.LogManager;
 import restaurant.bean.User;
 import restaurant.biz.UserService;
 
@@ -13,9 +12,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.logging.Logger;
 
 /**
  * Created by asus on 2017/5/20.
@@ -34,6 +30,7 @@ public class LoginControl extends HttpServlet implements Log4j2test{
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        request.setCharacterEncoding("uft-8");
         String a=this.getInitParameter("test");
         logger.debug(a);
         //step1: 获取用户提交的用户名和口令
@@ -43,7 +40,7 @@ public class LoginControl extends HttpServlet implements Log4j2test{
         //step2：数据库验证用户
         UserService userService = new UserService();
         if (userService.validateUser(user)) {
-            request.getRequestDispatcher("show.jsp").forward(request, response);
+            request.getRequestDispatcher("showback.jsp").forward(request, response);
         }else {
             response.sendRedirect("mylogintest.html");
         }
