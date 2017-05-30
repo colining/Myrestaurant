@@ -144,7 +144,6 @@
     <%
         User userName = (User) session.getAttribute("loginUser");
         Map<Integer, CartItemBean> MyCart = (Map<Integer, CartItemBean>) session.getAttribute("shoppingCar");
-
     %>
     <%--<c:choose>--%>
     <%--<c:when test="${userName==null }">--%>

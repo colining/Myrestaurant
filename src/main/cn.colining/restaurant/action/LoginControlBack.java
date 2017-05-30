@@ -19,10 +19,7 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebListener;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.*;
@@ -55,13 +52,31 @@ public class LoginControlBack extends HttpServlet implements Log4j2test {
                 pageListView(request, response);
                 break;
             case "detail":
-                //todo
+                viewDetail(request, response);
+                break;
             case "dishToCart":
                 dishToCart(request, response);
                 break;
             case "car":
-                //todo
+                viewCar(request, response);
+                break;
         }
+    }
+
+    private void viewDetail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        RequestDispatcher requestDispatcher = null;
+        requestDispatcher = request.getRequestDispatcher("details.jsp");
+        DishService dishService = new DishService();
+        Dish dish = dishService.getDish(request.getParameter("dishId"));
+        request.setAttribute("dish",dish);
+        requestDispatcher.forward(request, response);
+    }
+
+    private void viewCar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        RequestDispatcher requestDispatcher = null;
+        requestDispatcher = request.getRequestDispatcher("shopcar.jsp");
+        requestDispatcher.forward(request, response);
     }
 
     private void dishToCart(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -87,7 +102,7 @@ public class LoginControlBack extends HttpServlet implements Log4j2test {
             request.getSession().setAttribute("shoppingCar", shoppingCar);
         }
         RequestDispatcher requestDispatcher = null;
-        requestDispatcher = request.getRequestDispatcher("shopCart.jsp");
+        requestDispatcher = request.getRequestDispatcher("shopcar.jsp");
         requestDispatcher.forward(request, response);
     }
 
@@ -100,14 +115,26 @@ public class LoginControlBack extends HttpServlet implements Log4j2test {
     private void loginCheck(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //step1: 获取用户提交的用户名和口令
         String userName = request.getParameter("loginName");
-        String password = request.getParameter("loginPassWord");
-        User loginUser = new User(userName, password);
+        String passWord = request.getParameter("loginPassWord");
+        String remember = (request.getParameter("remember"));
+        System.out.println(remember);
+        User loginUser = new User(userName, passWord);
 
         //step2 :数据库验证
         UserService userService = new UserService();
         RequestDispatcher requestDispatcher = null;
 
         if (userService.validateUser(loginUser)) {
+            if ("on".equals(remember)) {
+                Cookie userNameCookie=new Cookie("userName", userName);
+                Cookie passWordCookie = new Cookie("passWord", passWord);
+                //设置过期时间
+                userNameCookie.setMaxAge(600);
+                passWordCookie.setMaxAge(600);
+                //存储
+                response.addCookie(userNameCookie);
+                response.addCookie(passWordCookie);
+            }
             //验证通过的话
             HttpSession httpSession = request.getSession(true);
             httpSession.setAttribute("loginUser", loginUser);
@@ -121,7 +148,7 @@ public class LoginControlBack extends HttpServlet implements Log4j2test {
             request.setAttribute("dishList", pageModel.getList());
             request.setAttribute("pageModel", pageModel);
 
-            requestDispatcher = request.getRequestDispatcher("show2.jsp?pageNO=1&totalPages=" + pageModel.getTotalPages());
+            requestDispatcher = request.getRequestDispatcher("show.jsp?pageNO=1&totalPages=" + pageModel.getTotalPages());
             requestDispatcher.forward(request, response);
         } else {
             response.sendRedirect("login.html");
@@ -155,7 +182,7 @@ public class LoginControlBack extends HttpServlet implements Log4j2test {
         PageModel<Dish> pageModel = dishService.findDish4PageList(pageNO, pageSize);
         request.setAttribute("dishList", pageModel.getList());
         request.setAttribute("pageModel", pageModel);
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("show2.jsp?pageNO=" + pageNO + "&totalPages=" + pageModel.getTotalPages());
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("show.jsp?pageNO=" + pageNO + "&totalPages=" + pageModel.getTotalPages());
         requestDispatcher.forward(request, response);
     }
 }

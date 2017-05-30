@@ -42,7 +42,7 @@ public class LoginControl extends HttpServlet implements Log4j2test{
         if (userService.validateUser(user)) {
             request.getRequestDispatcher("showback.jsp").forward(request, response);
         }else {
-            response.sendRedirect("mylogintest.html");
+            response.sendRedirect("mylogin.jsp");
         }
 
     }
