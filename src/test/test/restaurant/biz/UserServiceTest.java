@@ -10,6 +10,8 @@ import static org.junit.Assert.*;
  * Created by asus on 2017/5/21.
  */
 public class UserServiceTest {
+
+
     UserService userService = null;
     User user = null;
     @Before
@@ -23,7 +25,9 @@ public class UserServiceTest {
 
     @Test
     public void validateUser() throws Exception {
-        System.out.println("lalallalal"+userService.validateUser(user));
+        assertTrue(userService.validateUser(user));
+        user.setPassword("123");
+        assertFalse(userService.validateUser(user));
     }
 
 }
