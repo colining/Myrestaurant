@@ -72,5 +72,30 @@ pageEncoding="utf-8"%>
     </div>
 
 </div>
+
+<hr/>
+<!--页脚-->
+<footer data-am-widget="footer"
+        class="am-footer am-footer-default"
+        data-am-footer="{  }">
+    <div class="am-footer-switch">
+    <span class="am-footer-ysp" data-rel="mobile"
+          data-am-modal="{target: '#am-switch-mode'}">
+          程序员的菜
+    </span>
+        <span class="am-footer-divider"> | </span>
+        <a id="godesktop" data-rel="desktop" class="am-footer-desktop" href="javascript:">
+            电脑版
+        </a>
+    </div>
+    <div class="am-footer-miscs ">
+
+        <p>由 <a href="http://colining.cn/" title="colining.cn"
+                target="_blank" class="">colining.cn</a>
+            提供技术支持</p>
+        <p>CopyRight©2017 RTQ Inc.</p>
+        <p>赛博ICP备1024</p>
+    </div>
+</footer>
 </body>
 </html>

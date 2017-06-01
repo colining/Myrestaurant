@@ -1,3 +1,4 @@
+<%@ page import="restaurant.utils.PageModel" %>
 <%@ page language="java"
          isELIgnored="false"
          pageEncoding="utf-8" %>
@@ -41,6 +42,8 @@
         }
     </style>
 </HEAD>
+
+<rescope.>
 <BODY leftMargin=0 topMargin=0 marginheight="0" marginwidth="0">
 <jsp:useBean id="loginUser" class="restaurant.bean.User"
              scope="session"></jsp:useBean>
@@ -58,9 +61,9 @@
     <div class="am-u-lg-6 am-u-ms-8 am-u-sm-centered">
         <ul class="am-nav am-nav-pills am-nav-justify">
             <li class="am-active"><a href="#">首页</a></li>
-            <li><a href="#">开始使用</a></li>
-            <li><a href="#">按需定制</a></li>
-            <li><a href="#">加入我们</a></li>
+            <li><a href="#">订餐</a></li>
+            <li><a href="#">定制餐饮</a></li>
+            <li><a href="#">反馈与建议</a></li>
         </ul>
         <br>
     </div>
@@ -234,23 +237,7 @@
                     </c:if>
                 </c:forEach>
                 <tr>
-                    <%--<td  height="2">--%>
-                    <%--<div align="left">--%>
-                    <%--<font color="#000000">&nbsp;共&nbsp${param.totalPages}&nbsp页</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--%>
-                    <%--<font color="#000000">当前第</font>&nbsp--%>
-                    <%--<font color="#000000">${param.pageNO}</font>&nbsp--%>
-                    <%--<font color="#000000">页</font>--%>
-                    <%--</div>--%>
-                    <%--</td>--%>
-                    <%--<td  >--%>
-                    <%--<div align="right">--%>
-                    <%--<a name="btnTopPage"  id="btnTopPage" href="LoginControlBack?actionType=pageList&pageNO=1" title="首页">|&lt;&lt; </a>&nbsp;--%>
-                    <%--<a name="btnPreviousPage"  id="btnPreviousPage" href="LoginControlBack?actionType=pageList&pageNO=${requestScope.pageModel.prevPageNO}" title="上页"> &lt;  </a>&nbsp;--%>
-                    <%--<a name="btnNextPage"  id="btnNextPage" href="LoginControlBack?actionType=pageList&pageNO=${requestScope.pageModel.nextPageNO}" title="下页">  &gt; </a>&nbsp;--%>
-                    <%--<a name="btnBottomPage"  id="btnBottomPage" href="LoginControlBack?actionType=pageList&pageNO=${requestScope.pageModel.bottomPageNO}" title="尾页"> &gt;&gt;|</a>--%>
 
-                    <%--</div>--%>
-                    <%--</td>--%>
 
                 </tr>
                 </TBODY>

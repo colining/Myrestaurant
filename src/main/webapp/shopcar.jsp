@@ -1,6 +1,8 @@
 <%@ page import="restaurant.bean.User" %>
 <%@ page import="java.util.Map" %>
 <%@ page import="restaurant.bean.CartItemBean" %>
+<%@ page import="restaurant.utils.PageModel" %>
+<%@ page import="restaurant.bean.Dish" %>
 <%@ page language="java"
          isELIgnored="false"
          pageEncoding="utf-8" %>
@@ -101,12 +103,15 @@
                         <br>
                         <table width="300" border="0" cellspacing="1" cellpadding="4"
                                align="CENTER" bgcolor="#c0c0c0">
+                            <c:set var="a" value="0"></c:set>
                             <tr bgcolor="#dadada">
-                                <td height="10" align="center"><a href="#" onclick=""><font
+                                <td height="10" align="center"><a href="LoginControlBack?actionType=delete" onclick=""><font
                                         color="#000000">清空购物车</font></a></td>
-                                <td height="10" align="center" style="cursor:hand" onClick="javascript:history.go(-1)">
+
+                                <td height="10" align="center" style="cursor:hand" ><a href="javascript history.go(-1)">
                                     <font
-                                            color="#000000">继续购物</font></td>
+                                            color="#000000">继续购物</font></a></td>
+
                                 <td height="10" align="center" style="cursor:hand" onClick="#"><font
                                         color="#000000">生成订单</font></td>
                             </tr>

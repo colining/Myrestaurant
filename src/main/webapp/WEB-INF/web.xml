@@ -8,5 +8,7 @@
   <welcome-file-list>
     <welcome-file>mylogin.jsp</welcome-file>
   </welcome-file-list>
-
+  <error-page>
+    <error-code>404</error-code>
+  </error-page>
 </web-app>

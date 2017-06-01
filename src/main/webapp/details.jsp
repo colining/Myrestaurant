@@ -6,65 +6,65 @@
 <!-- saved from url=(0047)http://www.51meal.com/shop.asp?nowmenuid=500001 -->
 <HTML>
 <HEAD>
-    <TITLE>我学我会网上订餐系统</TITLE>
+    <TITLE> 程序员的菜</TITLE>
     <META http-equiv=Content-Type content="text/html; charset=gb2312">
     <link rel="stylesheet" href="./css/styles.css" type="text/css"/>
-
+    <link rel="stylesheet" type="text/css" href="http://cdn.amazeui.org/amazeui/2.7.2/css/amazeui.min.css">
+    <script type="text/javascript" src="http://cdn.amazeui.org/amazeui/2.7.2/js/amazeui.min.js"></script>
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
     <SCRIPT language=JavaScript type=text/JavaScript>
         <!--
 
         -->
     </SCRIPT>
+    <style>
+        .header {
+            text-align: center;
 
+        }
+
+        .header h1 {
+            font-size: 200%;
+            color: #333;
+            margin-top: 30px;
+        }
+
+        .header p {
+            font-size: 14px;
+        }
+
+        .footer p {
+            color: #7f8c8d;
+            text-align: center;
+            background: #2d3e50;
+            bottom: 0px;
+            padding: 15px;
+            width: 500px;;
+        }
+    </style>
 </HEAD>
 <BODY leftMargin=0 topMargin=0 marginheight="0" marginwidth="0">
-<table cellSpacing=0 cellPadding=0 width=776 align=center border=0>
-    <tr>
-        <td width="220" rowspan="3">　</td>
-        <td width="556" height="36">　</td>
-    </tr>
-    <tr>
-        <TD
-                style="FONT-SIZE: 24pt; FILTER: blur(add=1, direction=120, strength=5); WIDTH: 100%; COLOR: #000000; FONT-FAMILY: arial; POSITION: relative"
-                noWrap><B><span class="STYLE1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XXXX</span>
-            网上订餐系统</B></TD>
-    </tr>
-    <tr>
-        <td>　</td>
-    </tr>
-</table>
-<TABLE cellSpacing=0 cellPadding=0 width=776 align=center border=0>
-    <TBODY>
-    <TR>
-        <TD background="images/001.gif" height=42>
-            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
-                <TBODY>
-                <TR>
-                    <TD width=0 height=20></TD>
-                    <TD align=middle><FONT
-                            style="FONT-SIZE: 13px; COLOR: #000000">&nbsp;|&nbsp;</FONT><A
-                            href="#" target=_self><FONT
-                            style="FONT-SIZE: 13px; COLOR: #000000">网站首页</FONT></A><FONT
-                            style="FONT-SIZE: 13px; COLOR: #000000">&nbsp;|&nbsp;</FONT><A
-                            href="#" target=_self><FONT
-                            style="FONT-SIZE: 13px; COLOR: #000000">关于我们</FONT></A><FONT
-                            style="FONT-SIZE: 13px; COLOR: #000000">&nbsp;|&nbsp;</FONT><A
-                            href="#" target=_self><FONT
-                            style="FONT-SIZE: 13px; COLOR: #000000">定餐帮助</FONT></A><FONT
-                            style="FONT-SIZE: 13px; COLOR: #000000">&nbsp;|&nbsp;</FONT><A
-                            href="#" target=_self><FONT
-                            style="FONT-SIZE: 13px; COLOR: #000000">网上定餐</FONT></A><FONT
-                            style="FONT-SIZE: 13px; COLOR: #000000">&nbsp;|&nbsp;</FONT><A
-                            href="#" target=_self><FONT
-                            style="FONT-SIZE: 13px; COLOR: #000000">客服中心</FONT></A><FONT
-                            style="FONT-SIZE: 13px; COLOR: #000000">&nbsp;|&nbsp;</FONT></TD>
-                </TR>
-                </TBODY>
-            </TABLE>
-        </TD>
-    </TR>
-    </TBODY>
-</TABLE>
+<div class="header">
+    <div class="am-g">
+        <h1>程序员的菜</h1>
+        <p>hello world，希望你们不会打架<br/>请不要讨论：缩进，换行，空格，回车等内容</p>
+    </div>
+    <hr/>
+
+</div>
+
+<div class="am-g">
+    <div class="am-u-lg-6 am-u-ms-8 am-u-sm-centered">
+        <ul class="am-nav am-nav-pills am-nav-justify">
+            <li class="am-active"><a href="#">首页</a></li>
+            <li><a href="#">订餐</a></li>
+            <li><a href="#">定制餐饮</a></li>
+            <li><a href="#">反馈与建议</a></li>
+        </ul>
+        <br>
+    </div>
+</div>
+
 <TABLE cellSpacing=0 cellPadding=0 width=776 align=center border=0>
     <TBODY>
     <TR vAlign=top>
@@ -218,33 +218,57 @@
     </tr>
 </table>
 
-<TABLE cellSpacing=0 cellPadding=0 width=776 align=center border=0>
-    <TBODY>
-    <TR>
-        <TD background="images/005.gif" height=8></TD>
-    </TR>
-    </TBODY>
-</TABLE>
-<TABLE cellSpacing=0 cellPadding=0 width=776 align=center border=0>
-    <TBODY>
-    <TR>
-        <TD bgColor=#eeeeee>
-            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
-                <TBODY>
-                <TR>
-                    <TD align=middle><BR>
-                        <P align=center><FONT color=#000000>Copyright &copy;
-                            2010&nbsp;&nbsp;&nbsp;&nbsp; XXXX有限公司所有</FONT></P>
-                        <P align=center>　</P>
-                        <BR>
-                        <BR>
-                    </TD>
-                </TR>
-                </TBODY>
-            </TABLE>
-        </TD>
-    </TR>
-    </TBODY>
-</TABLE>
+<%--<TABLE cellSpacing=0 cellPadding=0 width=776 align=center border=0>--%>
+    <%--<TBODY>--%>
+    <%--<TR>--%>
+        <%--<TD background="images/005.gif" height=8></TD>--%>
+    <%--</TR>--%>
+    <%--</TBODY>--%>
+<%--</TABLE>--%>
+<%--<TABLE cellSpacing=0 cellPadding=0 width=776 align=center border=0>--%>
+    <%--<TBODY>--%>
+    <%--<TR>--%>
+        <%--<TD bgColor=#eeeeee>--%>
+            <%--<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>--%>
+                <%--<TBODY>--%>
+                <%--<TR>--%>
+                    <%--<TD align=middle><BR>--%>
+                        <%--<P align=center><FONT color=#000000>Copyright &copy;--%>
+                            <%--2010&nbsp;&nbsp;&nbsp;&nbsp; XXXX有限公司所有</FONT></P>--%>
+                        <%--<P align=center>　</P>--%>
+                        <%--<BR>--%>
+                        <%--<BR>--%>
+                    <%--</TD>--%>
+                <%--</TR>--%>
+                <%--</TBODY>--%>
+            <%--</TABLE>--%>
+        <%--</TD>--%>
+    <%--</TR>--%>
+    <%--</TBODY>--%>
+<%--</TABLE>--%>
+<hr/>
+<!--页脚-->
+<footer data-am-widget="footer"
+        class="am-footer am-footer-default"
+        data-am-footer="{  }">
+    <div class="am-footer-switch">
+    <span class="am-footer-ysp" data-rel="mobile"
+          data-am-modal="{target: '#am-switch-mode'}">
+          程序员的菜
+    </span>
+        <span class="am-footer-divider"> | </span>
+        <a id="godesktop" data-rel="desktop" class="am-footer-desktop" href="javascript:">
+            电脑版
+        </a>
+    </div>
+    <div class="am-footer-miscs ">
+
+        <p>由 <a href="http://colining.cn/" title="colining.cn"
+                target="_blank" class="">colining.cn</a>
+            提供技术支持</p>
+        <p>CopyRight©2017 RTQ Inc.</p>
+        <p>赛博ICP备1024</p>
+    </div>
+</footer>
 </BODY>
 </HTML>

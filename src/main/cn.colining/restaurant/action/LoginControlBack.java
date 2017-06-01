@@ -3,6 +3,7 @@ package restaurant.action;
 
 import com.sun.org.apache.regexp.internal.RE;
 import com.sun.xml.internal.bind.v2.model.core.ID;
+import javafx.application.Application;
 import log4j2.Log4j2test;
 import org.apache.logging.log4j.LogManager;
 import restaurant.bean.CartItemBean;
@@ -60,7 +61,20 @@ public class LoginControlBack extends HttpServlet implements Log4j2test {
             case "car":
                 viewCar(request, response);
                 break;
+            case "delete":
+                delete(request, response);
+                break;
         }
+    }
+
+    private void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession httpSession = request.getSession();
+        if (httpSession.getAttribute("shoppingCar") != null) {
+            httpSession.removeAttribute("shoppingCar");
+        }
+        RequestDispatcher requestDispatcher = null;
+        requestDispatcher = request.getRequestDispatcher("shopcar.jsp");
+        requestDispatcher.forward(request, response);
     }
 
     private void viewDetail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -147,11 +161,11 @@ public class LoginControlBack extends HttpServlet implements Log4j2test {
 
             request.setAttribute("dishList", pageModel.getList());
             request.setAttribute("pageModel", pageModel);
-
+            httpSession.setAttribute("pageNO",1);
             requestDispatcher = request.getRequestDispatcher("show.jsp?pageNO=1&totalPages=" + pageModel.getTotalPages());
             requestDispatcher.forward(request, response);
         } else {
-            response.sendRedirect("login.html");
+            response.sendRedirect("mylogin.jsp");
         }
     }
 
@@ -176,12 +190,12 @@ public class LoginControlBack extends HttpServlet implements Log4j2test {
     private void pageListView(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //获取当前页号
         int pageNO = Integer.parseInt(request.getParameter("pageNO"));
-
         DishService dishService = new DishService();
         int pageSize = getPageSize();
         PageModel<Dish> pageModel = dishService.findDish4PageList(pageNO, pageSize);
         request.setAttribute("dishList", pageModel.getList());
         request.setAttribute("pageModel", pageModel);
+
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("show.jsp?pageNO=" + pageNO + "&totalPages=" + pageModel.getTotalPages());
         requestDispatcher.forward(request, response);
     }
